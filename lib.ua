@@ -4,6 +4,7 @@
 
   NotEqual ← 1⍤⊃$"Failed asserting _ is NOT equal to _" (¬≍)
   Equal    ← 1⍤⊃$"Failed asserting _ is equal to _" ≍
+  Rank     ← 1⍤⊃$"Failed asserting _ has the same rank as _" =⧻△⊙(⧻△)
 └─╴
 
 ┌─╴test
@@ -57,4 +58,8 @@
   ⍤"Should succeed"⍣Assert~NotEqual 0 {[1] "hello"} {[1] "hello!"}
   ⍤"Should error" ¬⍣Assert~NotEqual 0 3.3333333333333333 3.3333333333333333
   ⍤"Should succeed"⍣Assert~NotEqual 0 3.333333333333333 3.333333333333334
+
+  # Assert~Rank tests
+  ⍤"Should succeed"⍣Assert~Rank 0 2 2
+  ⍤"Should error" ¬⍣Assert~Rank 0 2 [2]
 └─╴
