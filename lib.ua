@@ -1,9 +1,10 @@
 ┌─╴It
-  NotEquals    ← ⊃$"failed asserting _ is NOT equal to _" (¬≍)
-  Equals       ← ⊃$"failed asserting _ is equal to _" ≍
-  HasRank      ← ⊃$"failed asserting _ has the same rank as _" =⧻△⊙(⧻△)
-  DoesntThrow! ← $"failed asserting that function does NOT throw an error: _" : . °□⊢⇌ ⍣^0 {⊙∘} 1
-  Throws!      ← $"failed asserting that function does throw an error" ⍣^0 1 0
+  Equals           ← ⌅(⊃$"failed asserting _ is equal to _" ≍|⊃$"failed asserting _ is NOT equal to _" (¬≍))
+  NotEquals        ← °Equals
+  HasSameRank      ← ⌅(⊃$"failed asserting _ has the same rank as _" =⧻△⊙(⧻△)|⊃$"failed asserting _ has a different rank to _" ≠⧻△⊙(⧻△))
+  HasDifferentRank ← °HasSameRank
+  Throws!          ← $"failed asserting that function does throw an error" ⍣^0 1 0
+  DoesntThrow!     ← $"failed asserting that function does NOT throw an error: _" : . °□⊢⇌ ⍣^0 {⊙∘} 1
 └─╴
 
 ┌─╴test
@@ -62,6 +63,8 @@
   ⍤It~Throws!(⍤ It~NotEquals 3.3333333333333333501823918203 3.33333333333333333928309182038) # This is to show the limitations in It~Equal
 
   # It~Rank tests
-  ⍤It~DoesntThrow!(⍤It~HasRank 2 2)
-  ⍤It~Throws!(⍤It~HasRank 2 [2])
+  ⍤It~DoesntThrow!(⍤It~HasSameRank 2 2)
+  ⍤It~Throws!(⍤It~HasSameRank 2 [2])
+  ⍤It~Throws!(⍤It~HasDifferentRank 2 2)
+  ⍤It~DoesntThrow!(⍤It~HasDifferentRank 2 [2])
 └─╴
