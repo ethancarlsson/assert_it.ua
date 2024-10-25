@@ -1,7 +1,4 @@
 ┌─╴It
-  AreBothLenZero ↚ =0 + ∩⧻
-  IsEqual        ↚ ≍
-
   NotEquals  ← ⊃$"failed asserting _ is NOT equal to _" (¬≍)
   Equals     ← ⊃$"failed asserting _ is equal to _" ≍
   HasRank    ← ⊃$"failed asserting _ has the same rank as _" =⧻△⊙(⧻△)
