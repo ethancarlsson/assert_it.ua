@@ -7,7 +7,7 @@
   DoesntContain    ← °Contains
 
   Throws!      ← $"failed asserting that function does throw an error" ⍣^0 1 0
-  DoesntThrow! ← $"failed asserting that function does NOT throw an error: `_`" : . °□⊢⇌ ⍣^0 {⊙∘} 1
+  DoesntThrow! ← :≍1:$"failed asserting that function does NOT throw an error: `_`" : . °□⊢⇌ ⍣^0 {⊙∘} 1
 └─╴
 
 ┌─╴test
