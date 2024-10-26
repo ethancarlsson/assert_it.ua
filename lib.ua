@@ -1,13 +1,13 @@
 ┌─╴It
-  Equals           ← ⌅(⊃$"failed asserting `_` is equal to `_`" ≍|⊃$"failed asserting `_` is NOT equal to `_`" (¬≍))
-  NotEquals        ← °Equals
-  HasSameRank      ← ⌅(⊃$"failed asserting `_` has the same rank as `_`" =⧻△⊙(⧻△)|⊃$"failed asserting `_` has a different rank to `_`" ≠⧻△⊙(⧻△))
-  HasDifferentRank ← °HasSameRank
-  Contains         ← ⌅(⊃$"failed asserting `_` can be found within `_`" (≠0/+♭⌕)|⊃$"failed asserting `_` can NOT be found within `_`" (=0/+♭⌕))
-  DoesntContain    ← °Contains
+  Equals           ← |2.2 ⌅(⊃$"failed asserting `_` is equal to `_`" ≍|⊃$"failed asserting `_` is NOT equal to `_`" (¬≍))
+  NotEquals        ← |2.2 °Equals
+  HasSameRank      ← |2.2 ⌅(⊃$"failed asserting `_` has the same rank as `_`" =⧻△⊙(⧻△)|⊃$"failed asserting `_` has a different rank to `_`" ≠⧻△⊙(⧻△))
+  HasDifferentRank ← |2.2 °HasSameRank
+  Contains         ← |2.2 ⌅(⊃$"failed asserting `_` can be found within `_`" (≠0/+♭⌕)|⊃$"failed asserting `_` can NOT be found within `_`" (=0/+♭⌕))
+  DoesntContain    ← |2.2 °Contains
 
-  Throws!      ← $"failed asserting that function does throw an error" ⍣^0 1 0
-  DoesntThrow! ← :≍1:$"failed asserting that function does NOT throw an error: `_`" : . °□⊢⇌ ⍣^0 {⊙∘} 1
+  Throws!      ← |2.2 $"failed asserting that function does throw an error" ⍣^0 1 0
+  DoesntThrow! ← |2.2 :≍1:$"failed asserting that function does NOT throw an error: `_`" : . °□⊢⇌ ⍣^0 {⊙∘} 1
 └─╴
 
 ┌─╴test
