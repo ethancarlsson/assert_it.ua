@@ -1,0 +1,26 @@
+name: Changelog
+
+# Only trigger, when the test workflow has completed
+on:
+  workflow_run:
+    workflows: ["Tests"]
+    types:
+      - completed
+
+jobs:
+  update_changelog:
+    name: Update Changelog
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run conventional commits
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          version-file: "./uiua.toml"
+          version-path: "package.version"
+          github-token: ${{ secrets.GH_TOKEN }}
+          pre-changelog-generation: changelog/pre-changelog-gen.js
+
