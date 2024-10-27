@@ -35,6 +35,6 @@
   )
   IsLessThanOrEqualTo ← |2.2 °IsGreaterThanOrEqualTo
   
-  Throws!    ← |2.2 $"failed asserting that function does throw an error" ⍣^0 1 0
-  NotThrows! ← |2.2 :≍1:$"failed asserting that function does NOT throw an error: `_`" : . °□⊢⇌ ⍣^0 {⊙∘} 1
+  Throws!    ← |1.2 $"failed asserting that function does throw an error" ⍣^0 1 0
+  NotThrows! ← |1.2 :≍1:$"failed asserting that function does NOT throw an error: `_`" : . °□⊢⇌ ⍣^0 {⊙∘} 1
 └─╴
