@@ -108,6 +108,12 @@
   ⍤It~Throws!(⍤It~IsLessThan 3 3)
   ⍤It~Throws!(⍤It~IsLessThan 4 3)
 
+  ⍤It~Throws!(⍤It~IsGreaterThanOrEqualTo 2 3)
+  ⍤It~NotThrows!(⍤It~IsGreaterThanOrEqualTo 3 3)
+
+  ⍤It~Throws!(⍤It~IsLessThanOrEqualTo 4 3)
+  ⍤It~NotThrows!(⍤It~IsLessThanOrEqualTo 3 3)
+
   ⍤It~Equals "failed asserting `2` is equal to `1`" ◌:It~Equals 1 2
   ⍤It~Equals "failed asserting `[2 3 1]` contains the value `1`" ◌:It~Contains 1 [2 3 1]
   ⍤It~Equals "failed asserting `[2 3 1]` does NOT contain the value `5`" ◌:It~NotContains 5 [2 3 1]
