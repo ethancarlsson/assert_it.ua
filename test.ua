@@ -97,6 +97,17 @@
   ⍤It~NotThrows!(⍤It~NotContains "au" "uiua")
   ⍤It~NotThrows!(⍤It~NotContains {{9}} {{1} [2] 3})
 
+  ⍤It~Throws!(⍤It~IsGreaterThan 2 3)
+  ⍤It~Throws!(⍤It~IsGreaterThan 3 3)
+  ⍤It~NotThrows!(⍤It~IsGreaterThan 4 3)
+  ⍤It~Throws!(⍤It~IsGreaterThan [2 2] [3 3])
+  ⍤It~Throws!(⍤It~IsGreaterThan 6 [3 3])
+  ⍤It~NotThrows!(⍤It~IsGreaterThan 4 [1 1 1])
+
+  ⍤It~NotThrows!(⍤It~IsLessThan 2 3)
+  ⍤It~Throws!(⍤It~IsLessThan 3 3)
+  ⍤It~Throws!(⍤It~IsLessThan 4 3)
+
   ⍤It~Equals "failed asserting `2` is equal to `1`" ◌:It~Equals 1 2
   ⍤It~Equals "failed asserting `[2 3 1]` contains the value `1`" ◌:It~Contains 1 [2 3 1]
   ⍤It~Equals "failed asserting `[2 3 1]` does NOT contain the value `5`" ◌:It~NotContains 5 [2 3 1]
