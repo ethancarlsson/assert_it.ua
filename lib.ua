@@ -101,8 +101,8 @@
   ⍤It~NotThrows!(⍤It~NotContains "au" "uiua")
   ⍤It~NotThrows!(⍤It~NotContains {{9}} {{1} [2] 3})
 
-  ⍤ It~Equals "failed asserting `2` is equal to `1`" ◌:It~Equals 1 2
-  ⍤ It~Equals "failed asserting `[2 3 1]` contains the value `1`" ◌:It~Contains 1 [2 3 1]
-  ⍤ It~Equals "failed asserting `[2 3 1]` does NOT contain the value `5`" ◌:It~NotContains 5 [2 3 1]
-  ⍤ It~Equals "failed asserting `[5]` has the same rank as `5`" ◌:It~HasSameRank 5 [5]
+  ⍤It~Equals "failed asserting `2` is equal to `1`" ◌:It~Equals 1 2
+  ⍤It~Equals "failed asserting `[2 3 1]` contains the value `1`" ◌:It~Contains 1 [2 3 1]
+  ⍤It~Equals "failed asserting `[2 3 1]` does NOT contain the value `5`" ◌:It~NotContains 5 [2 3 1]
+  ⍤It~Equals "failed asserting `[5]` has the same rank as `5`" ◌:It~HasSameRank 5 [5]
 └─╴
