@@ -29,11 +29,12 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+          components: install
 
       - name: Install uiua
         uses: actions-rs/cargo@v1
         with:
-          command: install uiua
+          command: cargo install uiua -F full
 
       - name: Run uiua tests
         uses: actions-rs/cargo@v1
