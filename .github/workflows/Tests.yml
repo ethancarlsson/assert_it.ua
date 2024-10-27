@@ -2,9 +2,9 @@ name: Tests
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 env:
   CARGO_TERM_COLOR: always
@@ -16,27 +16,10 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
-
-      - id: cache-rustup
-        name: Cache Rust toolchain
-        uses: actions/cache@v3
+      - name: Install uiua from crates.io
+        uses: baptiste0928/cargo-install@v3
         with:
-          path: ~/.rustup
-          key: toolchain-${{ matrix.os }}-${{ matrix.rust-version }}
-
-      - if: ${{ steps.cache-rustup.outputs.cache-hit != 'true' }}
-        name: Install Rust toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          components: install
-
-      - name: Install uiua
-        uses: actions-rs/cargo@v1
-        with:
-          command: cargo install uiua -F full
-
+          crate: uiua
+          version: "0.13"
       - name: Run uiua tests
-        uses: actions-rs/cargo@v1
-        with:
-          command: uiua test tests.ua
+        run: uiua test test.ua
