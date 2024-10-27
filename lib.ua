@@ -1,9 +1,9 @@
 ┌─╴It
-  Equals           ← |2.2 ⌅(⊃$"failed asserting `_` is equal to `_`" ≍|⊃$"failed asserting `_` is NOT equal to `_`" (¬≍))
-  NotEquals        ← |2.2 °Equals
-  HasSameRank      ← |2.2 ⌅(⊃$"failed asserting `_` has the same rank as `_`" =⧻△⊙(⧻△)|⊃$"failed asserting `_` has a different rank to `_`" ≠⧻△⊙(⧻△))
+  Equals           ← |2.2 ⌅(⊃($"failed asserting `_` is equal to `_`":) ≍|⊃($"failed asserting `_` is NOT equal to `_`":) (¬≍))
+  DoesntEqual      ← |2.2 °Equals
+  HasSameRank      ← |2.2 ⌅(⊃($"failed asserting `_` has the same rank as `_`":) (=⧻△⊙(⧻△))|⊃($"failed asserting `_` has a different rank to `_`":) (≠⧻△⊙(⧻△)))
   HasDifferentRank ← |2.2 °HasSameRank
-  Contains         ← |2.2 ⌅(⊃$"failed asserting `_` can be found within `_`" (≠0/+♭⌕)|⊃$"failed asserting `_` can NOT be found within `_`" (=0/+♭⌕))
+  Contains         ← |2.2 ⌅(⊃($"failed asserting `_` contains the value `_`":) (≠0/+♭⌕)|⊃($"failed asserting `_` does NOT contain the value `_`":) (=0/+♭⌕))
   DoesntContain    ← |2.2 °Contains
 
   Throws!      ← |2.2 $"failed asserting that function does throw an error" ⍣^0 1 0
@@ -39,31 +39,31 @@
   ⍤It~DoesntThrow!(⍤ It~Equals 3.3333333333333333501823918203 3.33333333333333333928309182038) # This is to show the limitations in It~Equals
 
   # It~NotEquals tests
-  ⍤It~DoesntThrow!(⍤ It~NotEquals 3 2)
-  ⍤It~DoesntThrow!(⍤ It~NotEquals @3 @4)
-  ⍤It~DoesntThrow!(⍤ It~NotEquals "2 2" "2 3")
-  ⍤It~DoesntThrow!(⍤ It~NotEquals "2 2" "2 2 ")
-  ⍤It~DoesntThrow!(⍤ It~NotEquals " 2 2" "2 2 ")
-  ⍤It~DoesntThrow!(⍤ It~NotEquals [1 2] [2 2])
-  ⍤It~DoesntThrow!(⍤ It~NotEquals [2 2 2] [2 2])
-  ⍤It~DoesntThrow!(⍤ It~NotEquals [[2 2 3]] [[2 2 2]])
-  ⍤It~DoesntThrow!(⍤ It~NotEquals [[2 2 3] [2 2 2]] [[2 2 2] [2 2 2]])
-  ⍤It~DoesntThrow!(⍤ It~NotEquals {} {1})
-  ⍤It~DoesntThrow!(⍤ It~NotEquals {2} {1})
-  ⍤It~DoesntThrow!(⍤ It~NotEquals {[1] "hello"} {[1] "hello!"})
-  ⍤It~DoesntThrow!(⍤ It~NotEquals 3.333333333333333 3.333333333333334)
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual 3 2)
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual @3 @4)
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual "2 2" "2 3")
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual "2 2" "2 2 ")
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual " 2 2" "2 2 ")
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual [1 2] [2 2])
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual [2 2 2] [2 2])
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual [[2 2 3]] [[2 2 2]])
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual [[2 2 3] [2 2 2]] [[2 2 2] [2 2 2]])
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual {} {1})
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual {2} {1})
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual {[1] "hello"} {[1] "hello!"})
+  ⍤It~DoesntThrow!(⍤ It~DoesntEqual 3.333333333333333 3.333333333333334)
 
-  ⍤It~Throws!(⍤(It~NotEquals 2 2))
-  ⍤It~Throws!(⍤ It~NotEquals @2 @2)
-  ⍤It~Throws!(⍤ It~NotEquals "2 2" "2 2")
-  ⍤It~Throws!(⍤ It~NotEquals [2 2] [2 2])
-  ⍤It~Throws!(⍤ It~NotEquals [[2 2 2]] [[2 2 2]])
-  ⍤It~Throws!(⍤ It~NotEquals [[2 2 2] [2 2 2]] [[2 2 2] [2 2 2]])
-  ⍤It~Throws!(⍤ It~NotEquals {} {})
-  ⍤It~Throws!(⍤ It~NotEquals {1} {1})
-  ⍤It~Throws!(⍤ It~NotEquals {[1] "hello"} {[1] "hello"})
-  ⍤It~Throws!(⍤ It~NotEquals 3.3333333333333333 3.3333333333333333)
-  ⍤It~Throws!(⍤ It~NotEquals 3.3333333333333333501823918203 3.33333333333333333928309182038) # This is to show the limitations in It~Equals
+  ⍤It~Throws!(⍤(It~DoesntEqual 2 2))
+  ⍤It~Throws!(⍤ It~DoesntEqual @2 @2)
+  ⍤It~Throws!(⍤ It~DoesntEqual "2 2" "2 2")
+  ⍤It~Throws!(⍤ It~DoesntEqual [2 2] [2 2])
+  ⍤It~Throws!(⍤ It~DoesntEqual [[2 2 2]] [[2 2 2]])
+  ⍤It~Throws!(⍤ It~DoesntEqual [[2 2 2] [2 2 2]] [[2 2 2] [2 2 2]])
+  ⍤It~Throws!(⍤ It~DoesntEqual {} {})
+  ⍤It~Throws!(⍤ It~DoesntEqual {1} {1})
+  ⍤It~Throws!(⍤ It~DoesntEqual {[1] "hello"} {[1] "hello"})
+  ⍤It~Throws!(⍤ It~DoesntEqual 3.3333333333333333 3.3333333333333333)
+  ⍤It~Throws!(⍤ It~DoesntEqual 3.3333333333333333501823918203 3.33333333333333333928309182038) # This is to show the limitations in It~Equals
 
   # It~HasSameRank tests
   ⍤It~DoesntThrow!(⍤It~HasSameRank 2 2)
@@ -100,4 +100,9 @@
   ⍤It~DoesntThrow!(⍤It~DoesntContain @q "uiua")
   ⍤It~DoesntThrow!(⍤It~DoesntContain "au" "uiua")
   ⍤It~DoesntThrow!(⍤It~DoesntContain {{9}} {{1} [2] 3})
+
+  ⍤ It~Equals "failed asserting `2` is equal to `1`" ◌:It~Equals 1 2
+  ⍤ It~Equals "failed asserting `[2 3 1]` contains the value `1`" ◌:It~Contains 1 [2 3 1]
+  ⍤ It~Equals "failed asserting `[2 3 1]` does NOT contain the value `5`" ◌:It~DoesntContain 5 [2 3 1]
+  ⍤ It~Equals "failed asserting `[5]` has the same rank as `5`" ◌:It~HasSameRank 5 [5]
 └─╴
