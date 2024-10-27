@@ -61,6 +61,12 @@
   ⍤It~Throws!(⍤It~NotHasSameRank 2 2)
   ⍤It~NotThrows!(⍤It~NotHasSameRank 2 [2])
 
+  # It~HasSameShape tests
+  ⍤It~NotThrows!(⍤It~HasSameShape 2 2)
+  ⍤It~Throws!(⍤It~HasSameShape [2] [2 3])
+  ⍤It~Throws!(⍤It~NotHasSameShape 2 2)
+  ⍤It~NotThrows!(⍤It~NotHasSameShape [2] [2 3])
+
   # It~Contains tests
   ⍤It~NotThrows!(
     ⍤It~Contains 2 [
